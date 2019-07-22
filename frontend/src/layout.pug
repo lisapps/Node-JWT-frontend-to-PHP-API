@@ -1,0 +1,54 @@
+doctype html
+html
+    head
+        block head
+            title Rest API Authentication
+            meta(name="viewport" content="width=device-width")
+            link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+            link(rel="stylesheet" href="/css/main.css")
+    body
+        include includes/nav.pug
+
+    //- content
+    main.container.starter-template(role="main")
+        .row
+            .col
+                block content
+                
+
+
+//- script(src="/main.js")
+script.
+    // get or read cookie
+    function getCookie(cname){
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) { 
+            var c = ca[i];
+            while (c.charAt(0) == ' '){
+                c = c.substring(1);
+            }
+
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    let loggedin = false;  //should be reset after login.
+
+    // logout
+    function logOut() {
+        window.location.assign("/login");
+        status = false;
+        setCookie('loggedin', false, 1);
+    }

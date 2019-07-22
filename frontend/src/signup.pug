@@ -1,0 +1,32 @@
+extends layout
+block content
+    //- where prompt / messages will appear
+    #response
+
+    //- where main content will appear
+    #content
+        h2 Sign Up
+        form#sign_up_form(method="POST")
+            .form-group
+                label(for="firstname") Firstname
+                input#firstname.form-control(type="text" name="firstname" required)
+
+            .form-group
+                label(for="lastname") Lastname
+                input#lastname.form-control(type="text" name="lastname" required)
+
+            .form-group
+                label(for="email") Email
+                input#email.form-control(type="email" name="email" required)
+
+            .form-group
+                label(for="password") Password
+                input#password.form-control(type="password" name="password" required)
+
+            button.btn.btn-primary(type='submit') Sign Up
+
+    //-  trigger when registration form is submitted here
+ 
+    //- show login form trigger will be here
+ 
+    //- clearResponse() will be here

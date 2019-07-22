@@ -1,0 +1,46 @@
+extends layout
+block content
+    if(data)
+        - var response = data.res;
+        - console.log("data coming into page: ", data);
+    //- content
+    main.container.starter-template(role="main")
+        .row
+            .col
+                //- where prompt / messages will appear
+                #response
+                    .alert.alert-success 
+                    .alert.alert-danger
+                //- where main content will appear
+                #content
+                    .card
+                    .card-header Welcome to Home!</div>
+                    .card-body
+                        //- h5.card-title You are logged in.
+                        //- p.card-text You won't be able to access the home and account pages if you are not logged in.
+
+    script.
+        //var lStatus = getCookie("loggedin");
+
+        function clearResponse() {
+            document.getElementsByClassName('alert-success')[0].innerHTML = "";
+            var el1 = document.getElementsByClassName('alert-success')[0];
+            var el2 = document.getElementsByClassName('alert-danger')[0];
+            console.log('el1: ', el1);
+            el1.classList.add('hidden');
+            el2.classList.add('hidden');
+        }
+
+        clearResponse();
+
+        //- if(lStatus) {
+        //-     var el = document.getElementsByClassName('.card-text')[0];
+        //-     el.classList.add('hidden');
+        //- }
+
+        //- if(signedUp) {
+        //-     el1.classList.remove('hidden');
+        //-     document.getElementsByClassName('.alert-success')[0].innerHTML = "Successful Signup. Please Login."
+        //- }
+
+        

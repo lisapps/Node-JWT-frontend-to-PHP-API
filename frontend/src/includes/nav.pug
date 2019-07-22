@@ -1,0 +1,13 @@
+
+//- navigation 
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+    a.navbar-brand(href="#") Navbar
+    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+    #navbarNavAltMarkup.collapse.navbar-collapse
+        .navbar-nav
+            a#home.nav-item.nav-link(href="/") Home
+            a#update_account.nav-item.nav-link(href="/account") Account
+            a#logout.nav-item.nav-link(onclick="logOut()") Logout
+            a#login.nav-item.nav-link(href="/login") Login
+            a#sign_up.nav-item.nav-link(href="/signup") Sign Up
