@@ -14,7 +14,7 @@
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.11.0",
     "parser": "^0.1.4",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   },
   "author": "Lisa Ziegler",
   "license": "ISC",
